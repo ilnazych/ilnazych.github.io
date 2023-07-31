@@ -28,7 +28,6 @@ export function ModalWindow() {
                             form.resetFields();
                             dispatch(addData(values));
                             dispatch(closeModal())
-                            console.log(form)
                         })
                         .catch((info) => {
                             console.log('Validate Failed:', info);
