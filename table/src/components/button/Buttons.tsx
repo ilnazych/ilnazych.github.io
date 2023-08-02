@@ -14,7 +14,7 @@ export function Buttons({ record }) {
     };
 
     const handleEdit = (key: React.Key) => {
-        const newData = data.filter((item) => item.key === key);
+        const newData = data.find((item) => item.key === key);
         dispatch(openModal())
         dispatch(editData(newData))
     };

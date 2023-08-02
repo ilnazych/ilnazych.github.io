@@ -10,13 +10,15 @@ import { useEffect } from 'react';
 import dayjs from 'dayjs';
 
 
-export function Forms({ form }) {
-    const modalData = useSelector((state: InitialState) => state.toolkit.modalData)
-
+export function Forms({ form }: any) {
+    const modalData = useSelector((state: InitialState) => state.toolkit.modalData);
 
     useEffect(() => {
         form.setFieldsValue({ ...modalData, date: modalData.date ? dayjs(modalData.date) : null });
     }, [form, modalData]);
+
+
+
     return (
         <>
             <Form

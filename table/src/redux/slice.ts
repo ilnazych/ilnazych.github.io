@@ -8,10 +8,6 @@ const slice = createSlice({
         modalState: false,
         modalData:
         {
-            key: undefined,
-            name: '',
-            date: '',
-            numericalValue: undefined,
         },
         filtredData: [
         ],
@@ -41,21 +37,17 @@ const slice = createSlice({
             state.data = action.payload;
         },
         editData(state, action) {
-            // state.data.map(obj => {
-            //     if (obj.key === action.payload.key) {
-            //         obj.name = "action.payload.name"
-            //     } else {
-            //         return obj
-            //     }
-            // })
             state.modalData = action.payload
         },
+        addEditData(state, action) {
+            state.data = action.payload;
+        },
         filterData(state, action) {
-            state.filtredData = action.payload.key;
+            state.filtredData = action.payload;
         },
     }
 })
 
 export default slice.reducer
 
-export const { openModal, closeModal, addData, deleteData, editData, filterData } = slice.actions;
+export const { openModal, closeModal, addData, deleteData, editData, filterData, addEditData } = slice.actions;
