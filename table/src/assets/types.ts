@@ -1,13 +1,15 @@
 export interface DataType {
-    key?: number;
+    key: string;
     name: string;
-    date: number;
+    date: string;
     numericalValue: number;
-}[]
+}
 
-export interface initialState {
+export interface InitialState {
     toolkit: {
         modalState: boolean;
+        modalData: DataType;
+        filtredData: DataType[];
         data: DataType[];
     }
 }
@@ -17,3 +19,4 @@ export interface Values {
     description: string;
     modifier: string;
 }
+
